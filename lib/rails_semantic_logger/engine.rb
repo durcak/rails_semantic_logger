@@ -113,7 +113,6 @@ module RailsSemanticLogger
           Sidekiq::Logging.logger = SemanticLogger[Sidekiq]
         else
           Sidekiq.logger = SemanticLogger[Sidekiq]
-          Sidekiq.logger.class.alias_method(:with_context, :tagged)
         end
       end
       # Replace the Sidetiq logger
